@@ -39,5 +39,9 @@
 
       });
 
+      $app->post("/submit_car", function() use ($app) {
+         return $app['twig']->render('submit_results.html.twig'); 
+      });
+
     return $app;
 ?>
