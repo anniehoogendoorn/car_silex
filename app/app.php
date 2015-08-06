@@ -51,18 +51,7 @@
 
 
               return "
-                <!DOCTYPE html>
-                <html>
-                  <head>
-                    <title>Your car dealership</title>
-                  </head>
-                  <body>
-                      <h1>Your Car Dealership</h1>
-                      <ul>
-                        $output
-                      </ul>
-                  </body>
-                </html>
+                
                 ";
 
       });
