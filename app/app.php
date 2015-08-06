@@ -40,8 +40,13 @@
       });
 
       $app->get("/submit_car", function() use ($app) {
-          
+
          return $app['twig']->render('submit_car.html.twig');
+      });
+
+      $app->get("/submission_thankyou", function() use ($app) {
+
+          return $app['twig']->render('submission_thankyou.html.twig');
       });
 
     return $app;
