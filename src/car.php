@@ -52,6 +52,11 @@ class Car
     {
       return $this->picture;
     }
+
+    static function getAll()
+    {
+      return $_SESSION['cars_matching_search'];
+    }
 }
 
 ?>
