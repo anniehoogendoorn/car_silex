@@ -4,6 +4,10 @@
 
     session_start();
 
+    if (empty($_SESSION['cars_matching_search'])) {
+        $_SESSION['cars_matching_search'] = array();
+    }
+
     $app = new Silex\Application();
 
     $app->register(new Silex\Provider\TwigServiceProvider(), array(
@@ -21,7 +25,9 @@
       $second_car = new Car("2011 Ford F450", 14000, 55995, "img/ford.jpeg");
       $third_car = new Car("2013 Lexus RX 350", 20000, 44700, "img/lexus.jpg");
       $fourth_car = new Car("Mercedes Benz CLS550", 37979, 39900, "img/mercedes.jpg");
+
       $cars = array($first_car, $second_car, $third_car, $fourth_car);
+
       $cars_matching_search = array();
           foreach ($cars as $car) {
               if ($car->worthBuying($_GET["price"], $_GET["miles"])) {
@@ -51,7 +57,7 @@
 
 
               return "
-                
+
                 ";
 
       });

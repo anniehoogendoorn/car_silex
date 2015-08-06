@@ -8,7 +8,13 @@
       {% if cars_matching_search is not empty %}
           <p>Here are your car search matches:</p>
           <ul>
-              {% for Car cars_matching_search %}
+              {% for car in cars_matching_search %}
+                    <li>{{ car.getMake_Model }}</li>
+                    <p><img src='{{ car.getPicture }}'></p>
+                    <li>{{ car.getPrice }}</li>
+                    <li>{{ car.getMiles }}</li>
+              {% endfor %}
+          </ul>
       {% endif %}
   </body>
 </html>

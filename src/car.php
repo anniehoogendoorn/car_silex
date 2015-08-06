@@ -53,6 +53,11 @@ class Car
       return $this->picture;
     }
 
+    function save()
+    {
+        array_push($_SESSION['cars_matching_search'], $this);
+    }
+    
     static function getAll()
     {
       return $_SESSION['cars_matching_search'];
