@@ -11,8 +11,8 @@
               {% for car in cars_matching_search %}
                     <li>{{ car.getMake_Model }}</li>
                     <p><img src='{{ car.getPicture }}'></p>
-                    <li>{{ car.getPrice }}</li>
-                    <li>{{ car.getMiles }}</li>
+                    <li>${{ car.getPrice }}</li>
+                    <li>{{ car.getMiles }} miles</li>
               {% endfor %}
           </ul>
           {% else %}
