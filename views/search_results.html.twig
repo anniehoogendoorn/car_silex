@@ -9,10 +9,13 @@
           <p>Here are your car search matches:</p>
           <ul>
               {% for car in cars_matching_search %}
-                    <li>{{ car.getMake_Model }}</li>
+                    <p><strong>{{ car.getMake_Model }}</strong></p>
+                    <ul>
+                        <li>${{ car.getPrice }}</li>
+                        <li>{{ car.getMiles }} miles</li>
+                    </ul>
                     <p><img src='{{ car.getPicture }}'></p>
-                    <li>${{ car.getPrice }}</li>
-                    <li>{{ car.getMiles }} miles</li>
+                    <br></br>
               {% endfor %}
           </ul>
           {% else %}
