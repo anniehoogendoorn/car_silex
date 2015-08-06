@@ -5,6 +5,7 @@ class Car
     private $price;
     private $miles;
     private $picture;
+
     function worthBuying($max_price, $max_miles)
     {
       return $this->price < $max_price && $this->miles < $max_miles;
@@ -57,7 +58,7 @@ class Car
     {
         array_push($_SESSION['cars_matching_search'], $this);
     }
-    
+
     static function getAll()
     {
       return $_SESSION['cars_matching_search'];

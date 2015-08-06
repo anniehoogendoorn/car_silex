@@ -20,7 +20,7 @@
     });
 
 
-      $app->get("/car", function() {
+      $app->post("/search_results", function() {
       $first_car = new Car("2014 Porsche 911", 7864, 114991, "img/porsche.jpg");
       $second_car = new Car("2011 Ford F450", 14000, 55995, "img/ford.jpeg");
       $third_car = new Car("2013 Lexus RX 350", 20000, 44700, "img/lexus.jpg");
@@ -35,29 +35,28 @@
               }
            }
 
-         return $app['twig']->render('search_results.html.twig', array('cars_matching_search' => Car::getAll()));
+         return $app['twig']->render('search_results.html.twig', array('cars_matching_search' => $cars_matching_search));
 
 
-           foreach ($cars_matching_search as $car) {
-               $new_price = $car->getPrice();
-               $miles = $car->getMiles();
-               $make_model = $car->getMake_Model();
-               $picture = $car->getPicture();
+        //    foreach ($cars_matching_search as $car) {
+        //        $new_price = $car->getPrice();
+        //        $miles = $car->getMiles();
+        //        $make_model = $car->getMake_Model();
+        //        $picture = $car->getPicture();
 
-            //    $output = "";
-            //    $output = $output . "";
-              }
-              if (empty($cars_matching_search))
-              {
-                $output =  "We have no cars for you!";
-              }
+
+            //   }
+            //   if (empty($cars_matching_search))
+            //   {
+                // $output =  "We have no cars for you!";
+            //   }
 
       //
     //           return "
       //
     //             ";
       //
-    //   });
+      });
 
     return $app;
 ?>
