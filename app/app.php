@@ -15,7 +15,7 @@
     ));
 
     $app->get("/", function() use ($app) {
-      return $app['twig']->render('dealership_search.html.twig', array('cars_matching_search' => Car::getAll()));
+      return $app['twig']->render('dealership_search.html.twig');
 
     });
 
@@ -35,6 +35,8 @@
               }
            }
 
+         return $app['twig']->render('search_results.html.twig', array('cars_matching_search' => Car::getAll()));
+
 
            foreach ($cars_matching_search as $car) {
                $new_price = $car->getPrice();
@@ -42,25 +44,20 @@
                $make_model = $car->getMake_Model();
                $picture = $car->getPicture();
 
-               $output = "";
-               $output = $output . "<li> $make_model </li>
-               <li> <img src='$picture'>1500 </li>
-               <ul>
-                  <li> $new_price </li>
-                  <li> $miles </li>
-              </ul>";
+            //    $output = "";
+            //    $output = $output . "";
               }
               if (empty($cars_matching_search))
               {
                 $output =  "We have no cars for you!";
               }
 
-
-              return "
-
-                ";
-
-      });
+      //
+    //           return "
+      //
+    //             ";
+      //
+    //   });
 
     return $app;
 ?>
